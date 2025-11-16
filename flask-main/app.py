@@ -3,8 +3,8 @@ from flask import Flask, render_template
 from supabase import create_client
 
 
-SUPABASE_URL = "https://csgiuqsmzaohurfstbtj.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNzZ2l1cXNtemFvaHVyZnN0YnRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5NDExODksImV4cCI6MjA3NzUxNzE4OX0.cHDdBRJUEDkFWehhFoukwe0tpmhuOf_DpXPWrRcVTPc"
+SUPABASE_URL = "https://uldhgxxgoreeyuopircj.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVsZGhneHhnb3JlZXl1b3BpcmNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMzMDA4ODMsImV4cCI6MjA3ODg3Njg4M30.uWR-8xThLflRXVe5MIeNSJnEacZb6ZdzqDMAjmrJnzw"
 
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
