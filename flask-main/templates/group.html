@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Группа: {{ group }}</h2>
+<ul class="list-group">
+  {% for s in students %}
+  <li class="list-group-item">
+    <a href="{{ url_for('student_view', user_id=s.user_id) }}">
+      {{ s.surname }} {{ s.name }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+<a href="/" class="btn btn-secondary mt-3">Назад</a>
+{% endblock %}

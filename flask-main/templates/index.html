@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Группы</h2>
+
+<div class="list-group mt-4">
+  {% for group, students in groups.items() %}
+  <a href="{{ url_for('group_view', group_name=group) }}"
+     class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+    <div>
+      <strong>{{ group }}</strong>
+    </div>
+    <span class="badge bg-primary rounded-pill">{{ students|length }}</span>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}

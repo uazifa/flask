@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ user.surname }} {{ user.name }}</h2>
+<p><b>Группа:</b> {{ user.group_name }}</p>
+
+{% if quizzes_grouped %}
+  {% for quiz_name, questions in quizzes_grouped.items() %}
+  <div class="card my-4">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">Квиз: {{ quiz_name }}</h5>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-striped align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Дата</th>
+            <th>Вопрос</th>
+            <th>Варианты ответов</th>
+            <th>Правильный ответ</th>
+            <th>Результат</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for q in questions %}
+          <tr>
+            <td>{{ q.timestamp }}</td>
+            <td>{{ q.question }}</td>
+            <td>{{ q.all_options }}</td>
+            <td>{{ q.correct_answer }}</td>
+            <td class="text-center">
+              {% if q.score == 1 %}
+                <span class="text-success fw-bold">✅ Правильно</span>
+              {% else %}
+                <span class="text-danger fw-bold">❌ Неправильно</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endfor %}
+{% else %}
+  <p>Этот студент ещё не проходил квизы.</p>
+{% endif %}
+
+<a href="/" class="btn btn-secondary mt-3">Назад</a>
+{% endblock %}
